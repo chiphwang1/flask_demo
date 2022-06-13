@@ -11,13 +11,12 @@ resource "time_sleep" "wait_1min_demo" {
 }
 
 
-resource "kubernetes_namespace" "demo3" {
-  depends_on = [
-  time_sleep.wait_1min_demo
-  ]
-  metadata {
-    name = "demo-namespace"
-  }
+resource "null_resource" "create_ns" {
+  
+  depends_on = [time_sleep.wait_1min_demo]
+  provisioner "local-exec" {
+    command = "kubectl --kubeconfig /tmp/kubeconfig create ns demo3" 
+
 }
 
 
