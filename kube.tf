@@ -3,14 +3,17 @@ provider "kubernetes" {
 }
 
 
-
-
-
+resource "time_sleep" "wait_1min" {
+  depends_on = [
+  local_file.kubeconfig
+  ]
+  create_duration = "60s"
+}
 
 
 resource "kubernetes_namespace" "demo3" {
   depends_on = [
-  local_file.kubeconfig
+  time_sleep.wait_1min
   ]
   metadata {
     name = "demo-namespace"
