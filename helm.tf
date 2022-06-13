@@ -4,15 +4,8 @@ provider "helm" {
   }
 }
 
-resource "time_sleep" "wait_1min" {
-  depends_on = [
-  local_file.kubeconfig
-  ]
-  create_duration = "60s"
-}
-
 resource "helm_release" "flask_demo" {
-  depends_on = [kubernetes_namespace.demo3]
+  depends_on = [null_resource.create_ns]
   name       = "flask-demo"
   chart      = "./generated/flask-demo/"
   namespace = "demo3"
