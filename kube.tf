@@ -1,7 +1,5 @@
 provider "kubernetes" {
-  kubernetes {
     config_path = "/tmp/kubeconfig"
-  }
 }
 
 
