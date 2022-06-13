@@ -19,7 +19,7 @@ resource "null_resource" "create_ns" {
 
 }
 
-
+}
 
 resource "time_sleep" "wait_3min" {
   depends_on = [
