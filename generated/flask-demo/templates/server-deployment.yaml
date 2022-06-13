@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: testuser2000/microservice
+        image: testuser2000/microservice:flask-redis
         ports:
           - containerPort: 5000
         env:
