@@ -15,5 +15,6 @@ resource "helm_release" "flask_demo" {
   depends_on = [time_sleep.wait_1min]
   name       = "flask-demo"
   chart      = "./generated/flask-demo/"
+  namespace = "demo3"
 
   }
