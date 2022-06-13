@@ -56,7 +56,7 @@ locals {
   )
   oke_compartment_statements = concat(
     local.oci_grafana_logs_statements,
-    var.use_encryption_from_oci_vault ? local.allow_oke_use_oci_vault_keys_statements : []
+    #var.use_encryption_from_oci_vault ? local.allow_oke_use_oci_vault_keys_statements : []
     #var.cluster_autoscaler_enabled ? local.cluster_autoscaler_statements : []
   )
   kms_compartment_statements = concat(
@@ -84,14 +84,6 @@ locals {
   #   "Allow dynamic-group ${local.oke_nodes_dg} to use vnics in compartment id ${local.oke_compartment_id}",
   #   "Allow dynamic-group ${local.oke_nodes_dg} to inspect compartments in compartment id ${local.oke_compartment_id}"
   # ]
-  allow_oke_use_oci_vault_keys_statements = [
-    "Allow service oke to use vaults in compartment id ${local.oke_compartment_id}",
-    "Allow service oke to use keys in compartment id ${local.oke_compartment_id} where target.key.id = '${local.oci_vault_key_id}'",
-    "Allow dynamic-group ${local.oke_nodes_dg} to use keys in compartment id ${local.oke_compartment_id} where target.key.id = '${local.oci_vault_key_id}'"
-  ]
-  allow_group_manage_vault_keys_statements = [
-    "Allow group ${var.user_admin_group_for_vault_policy} to manage vaults in compartment id ${local.oke_compartment_id}",
-    "Allow group ${var.user_admin_group_for_vault_policy} to manage keys in compartment id ${local.oke_compartment_id}",
-    "Allow group ${var.user_admin_group_for_vault_policy} to use key-delegate in compartment id ${local.oke_compartment_id}"
-  ]
+  
+ 
 }
