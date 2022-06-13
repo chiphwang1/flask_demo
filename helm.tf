@@ -11,10 +11,9 @@ resource "time_sleep" "wait_1min" {
   create_duration = "60s"
 }
 
-
-resource "helm_release" "nginx_ingress" {
+resource "helm_release" "flask_demo" {
   depends_on = [time_sleep.wait_1min]
   name       = "flask-demo"
-  chart      = "./generated/flask_demo/"
+  chart      = "./generated/flask-demo/"
 
   }
