@@ -12,7 +12,7 @@ resource "time_sleep" "wait_1min" {
 }
 
 resource "helm_release" "flask_demo" {
-  depends_on = [time_sleep.wait_1min,kubernetes_namespace.demo3]
+  depends_on = [kubernetes_namespace.demo3]
   name       = "flask-demo"
   chart      = "./generated/flask-demo/"
   namespace = "demo3"

@@ -6,12 +6,9 @@ provider "kubernetes" {
 
 
 
-resource "time_sleep" "wait_for_kube" {
-  depends_on = [
-  local_file.kubeconfig
-  ]
-  create_duration = "60s"
-}
+
+
+
 
 resource "kubernetes_namespace" "demo3" {
   depends_on = [
@@ -24,8 +21,18 @@ resource "kubernetes_namespace" "demo3" {
 
 
 
+resource "time_sleep" "wait_3min" {
+  depends_on = [
+  helm_release.flask_demo
+  ]
+  create_duration = "180s"
+}
+
+
+
+
 resource "null_resource" "example1" {
-   depends_on = [time_sleep.wait_1min]
+   depends_on = [time_sleep.wait_3min]
   provisioner "local-exec" {
     command = "/bin/bash ./generated/kube.sh > /tmp/ip_addr" 
     
