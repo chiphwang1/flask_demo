@@ -12,7 +12,7 @@ variable "create_new_oke_cluster" {
 
 # cluster1
 variable "existent_oke_cluster_id" {
-  default     = "ocid1.cluster.oc1.iad.aaaaaaaak3epxnx4ekmzrbvocmfhr7ijcgedxket53bo4i653ced7x3bu7xa"
+  default     = 
   description = "Using existent OKE Cluster. Only the application and services will be provisioned. If select cluster autoscaler feature, you need to get the node pool id and enter when required"
 }
 variable "create_new_compartment_for_oke" {
@@ -137,7 +137,7 @@ variable "network_cidrs" {
 
 # Create Dynamic Group and Policies
 variable "create_dynamic_group_for_nodes_in_compartment" {
-  default     = true
+  default     = false
   description = "Creates dynamic group of Nodes in the compartment. Note: You need to have proper rights on the Tenancy. If you only have rights in a compartment, uncheck and ask you administrator to create the Dynamic Group for you"
 }
 variable "existent_dynamic_group_for_nodes_in_compartment" {
@@ -145,11 +145,11 @@ variable "existent_dynamic_group_for_nodes_in_compartment" {
   description = "Enter previous created Dynamic Group for the policies"
 }
 variable "create_compartment_policies" {
-  default     = true
+  default     = false
   description = "Creates policies that will reside on the compartment. e.g.: Policies to support Cluster Autoscaler, OCI Logging datasource on Grafana"
 }
 variable "create_tenancy_policies" {
-  default     = true
+  default     = false
   description = "Creates policies that need to reside on the tenancy. e.g.: Policies to support OCI Metrics datasource on Grafana"
 }
 

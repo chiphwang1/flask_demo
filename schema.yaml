@@ -51,10 +51,10 @@ variableGroups:
     - node_pool_node_shape_config_memory_in_gbs
     - image_operating_system
     - image_operating_system_version
-    - create_dynamic_group_for_nodes_in_compartment
-    - existent_dynamic_group_for_nodes_in_compartment
-    - create_compartment_policies
-    - create_tenancy_policies
+    #- create_dynamic_group_for_nodes_in_compartment
+    #- existent_dynamic_group_for_nodes_in_compartment
+    #- create_compartment_policies
+    #- create_tenancy_policies
 
 #################
 # Output Groups
@@ -335,9 +335,9 @@ variables:
   
   project_description:
     type: string
-    title: "DevOps Project Description"
-    description: "A short description for the DevOps project"
-    default: "DevOps Project for OKE deployment"
+    title: "Project Description"
+    description: "A short description for the project"
+    default: "Project for OKE deployment"
     required: false
     visible: 
       and:
