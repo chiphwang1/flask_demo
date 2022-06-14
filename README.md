@@ -1,5 +1,8 @@
-# oci-terraform-helm-wrapper
+# oci-OKE-Flask-Helm
 
+## Introduction
+
+This Terraform code can deploy a sample application built with the Flask framework using  Redis as a database. The Terraform can deploy into an existing OKE cluster in your compartment, or if you don't have an OKE cluster deployed, the Terraform code will give you the option to automate the deployment of an OKE cluster in your compartment. You must already have permission to deploy an OKE cluster in your compartment.
 
 
 ## Terraform Provider for Oracle Cloud Infrastructure
