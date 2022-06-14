@@ -1,4 +1,4 @@
-# OCI-OKE-Flaks-Helm
+# OCI-OKE-Flask-Helm
 
 ## Introduction
 
