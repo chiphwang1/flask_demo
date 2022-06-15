@@ -2,19 +2,19 @@
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 variable "tenancy_ocid" {
-  default = "ocid1.tenancy.oc1..aaaaaaaajznex5attydtrmrgudwayqu7kn4krasw2ct4h4pwz7nwbfxoyd4q"
+  default = ""
   }
 variable "compartment_ocid" {
-  default =  "ocid1.compartment.oc1..aaaaaaaamtrs5i5sm6b4ie2uchhjlu6jxp3oehi5y4b6hp34pqpcffpkdzja"
+  default =  ""
 }
 variable "user_ocid" {
-  default = "ocid1.user.oc1..aaaaaaaao7mct2dugqn6ymsm2mncrthv2q2zcbh7emcgwmckswmaiboiargq"
+  default = ""
 }
 variable "fingerprint" {
-  default = "5a:b6:9a:f1:4b:47:43:53:e5:a2:38:f9:5d:5d:e7:39"
+  default = ""
 }
 variable "private_key_path" {
-  default = "~/.oci/chip_private.pem "
+  default = ""
 }
 variable "region" {
   default = "us-ashburn-1"
